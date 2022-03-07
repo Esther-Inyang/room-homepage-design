@@ -1,0 +1,307 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 62.75%;
+}
+
+body{
+    font-family: 'Spartan', sans-serif;
+}
+
+colors{
+    color: hsl(0, 0%, 63%);
+    color: hsl(0, 0%, 0%);
+    color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 27%);
+}
+
+.hero{
+    width: 100%;
+    height:35.5rem;
+    text-align: center;
+    background-image: url(./images/mobile-image-hero-1.jpg);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.menu-and-title{
+    width: 100%;
+    padding-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+
+.nav{
+    background-color: transparent;
+    margin-left: 3rem;
+}
+
+.nav a{
+    display: inline-block;
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    padding: 1.2rem;
+}
+
+.nav a:hover{
+    color:hsl(0, 0%, 0%);
+    background-color: hsl(0, 0%, 100%);
+}
+
+.hamburger-icons{
+    display: none;
+    flex-basis: 10%;
+}
+
+.hero-title{
+    flex-basis: 30%;
+    font-size: 3rem;
+    padding-left: 2rem;
+    font-weight: 200;
+    color: hsl(0, 0%, 100%);
+}
+
+.button-container{
+    width: 10rem;
+    height: 5rem;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.prev-btn,
+.next-btn{
+    border: none;
+    flex-basis: 100%;
+    background-color: hsl(0, 0%, 0%);  
+}
+
+.prev-btn:hover,
+.next-btn:hover{
+    background-color: hsl(0, 0%, 27%)
+}
+
+.shop-now-article{
+    padding: 4rem;
+}
+
+.shop-now-article h2{
+    font-size: 2.5rem;
+}
+
+.shop-now-article p,
+.furniture-article p{
+    margin-top: 2rem;
+    line-height: 1.7;
+    color: hsl(0, 0%, 63%);
+    font-weight: 600;
+}
+
+.shop-now-container h4{
+    flex-basis: 50%;
+    margin-top: 2rem;
+    font-size: .9rem;
+    text-transform: uppercase;
+    color: hsl(0, 0%, 27%);
+    letter-spacing: .8rem;
+}
+
+.shop-now-container{
+    gap: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.shop-arrow{
+    flex-basis: 10%;
+    margin-top: 2rem;
+}
+
+.furniture-article{
+    padding: 4rem;
+}
+
+.furniture-article h2{
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: .3rem;
+    font-weight: 700;
+}
+
+.prod-image-dark,
+.prod-image-light{
+    width: 100%;
+}
+
+.active{
+    color:hsl(0, 0%, 0%) !important;
+    background-color: hsl(0, 0%, 100%);
+}
+
+@media screen and (min-width: 768px){
+    .hero{
+        background-image: url("./images/desktop-image-hero-1.jpg");
+        background-size: cover;
+        background-position: center center;
+    }
+    .menu-and-title{
+        padding-top: 1rem;
+    }
+
+    .hero-title{
+        font-size: 4rem;
+    }
+
+    .nav a{
+        font-size: 1.7rem;
+    }
+
+    .button-container{
+        width: 13rem;
+        height: 6rem;
+    }
+
+    .shop-now-article,
+    .furniture-article{
+        padding: 5rem;
+    }
+
+    .shop-now-article h2{
+        font-size: 3.5rem;
+    }
+
+    .shop-now-article p,
+    .furniture-article p{
+        font-size: 2rem;
+        line-height: 1.9;
+        margin-top: 3rem;
+    }
+
+    .shop-now-container h4{
+        font-size: 1.5rem;
+        flex-basis: 30%;
+        margin-top: 4rem;
+    }
+
+    .shop-arrow{
+        flex-basis: 10%;
+        margin-top: 4rem;
+    }
+
+    .furniture-article h2{
+        font-size: 2rem;
+        letter-spacing: 1rem;
+    }
+}
+
+@media screen and (min-width: 992px){
+
+    .hero-section{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+    }
+
+    .hero{
+        flex-basis: 60%;
+        height: 100%;
+        background-image: url("./images/desktop-image-hero-1.jpg");
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .menu-and-title{
+        padding: 5rem;
+    }
+
+    .hero-title{
+        flex-basis: 10%;
+    }
+
+    .nav{
+        margin-left: 10rem;
+    }
+
+    .hamburger-open{
+        display: none;
+    }
+
+    .shop-now-container{
+        width: 100%;
+    }
+
+    .shop-now-article{
+        flex-basis: 40%;
+        /* padding: 20rem 10rem; */
+        display: grid;
+        place-items: center;
+    }
+
+    .shop-now-article p,
+    .furniture-article p{
+        line-height: 3rem;
+        font-size: 1.7rem;
+        font-weight: 200;
+    }
+
+    .shop-now-article,
+    .furniture-article{
+        padding: 7rem;
+    }
+
+    .shop-now-article p,
+    .shop-now-container h4{
+        margin-top: 0;
+    }
+
+    .shop-now-container h4{
+        font-size: 1.5rem;
+        flex-basis: 50%;
+    }
+
+    .shop-arrow{
+        flex-basis: 10%;
+        margin-top: 0;
+    }
+
+    .product-section{
+        width: 100%;
+        height: 50rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .product-image-container{
+        height: 100%;
+        flex-basis: 30%;
+    }
+
+    .furniture-article{
+        height: 100%;
+        padding-top: 8rem;
+        flex-basis: 40%;
+    }
+
+    .furniture-article h2{
+        font-size: 1.5rem;
+    }
+
+    .prod-image-dark,
+    .prod-image-light{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* @media screen and (max-width: 1440px){
+    
+} */
