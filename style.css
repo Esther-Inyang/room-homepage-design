@@ -38,27 +38,24 @@ colors{
     justify-content: left;
 }
 
-
-.nav{
-    background-color: transparent;
-    margin-left: 1rem;
-}
-
-.nav a{
-    display: inline-block;
-    text-decoration: none;
-    color: hsl(0, 0%, 100%);
-    padding: 1.2rem;
-}
-
-.nav a:hover{
-    color:hsl(0, 0%, 0%);
-    background-color: hsl(0, 0%, 100%);
-}
-
 .hamburger-icons{
-    display: none;
     flex-basis: 10%;
+}
+
+.hamburger-open,
+.hamburger-close{
+    width: 2.5rem;
+    height: 2rem;
+    margin: 0 5rem 0 2rem;
+    z-index: 1;
+}
+
+.hamburger-open{
+    display: block;
+}
+
+.hamburger-close{
+    display: none;
 }
 
 .hero-title{
@@ -67,6 +64,50 @@ colors{
     padding-left: 2rem;
     font-weight: 200;
     color: hsl(0, 0%, 100%);
+    margin-left: 5rem;
+}
+
+.nav{
+    width: 100%;
+    height: 0;
+    display: none;
+    background-color: transparent;
+    margin-left: 1rem;
+    transition: all .3s ease-out;
+}
+
+.shownav{
+    height: auto;
+}
+
+.menu-link{
+    display: inline-block;
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    padding: 1.2rem 0;
+    cursor: pointer;
+    margin: 0 1rem;
+    position: relative;
+}
+
+.active::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.3rem;
+    left: 0;
+    bottom: 0; 
+    background-color: #ffffff;
+}
+
+.menu-link:hover::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.3rem;
+    left: 0;
+    bottom: 0; 
+    background-color: #ffffff;
 }
 
 .button-container{
@@ -113,17 +154,17 @@ colors{
     text-transform: uppercase;
     color: hsl(0, 0%, 27%);
     letter-spacing: .8rem;
+    cursor: pointer;
+}
+
+.shop-now-container h4:hover{
+    color: hsl(0, 0%, 63%);
 }
 
 .shop-now-container{
     gap: 2rem;
     display: flex;
     align-items: center;
-}
-
-.shop-arrow{
-    flex-basis: 10%;
-    margin-top: 2rem;
 }
 
 .furniture-article{
@@ -142,23 +183,38 @@ colors{
     width: 100%;
 }
 
-.active{
-    color:hsl(0, 0%, 0%) !important;
-    background-color: hsl(0, 0%, 100%);
+/* for javascript */
+.shop-arrow{
+    flex-basis: 10%;
+    margin-top: 2rem;
 }
 
 @media screen and (min-width: 768px){
     .hero{
-        background-image: url("./images/desktop-image-hero-1.jpg");
+        height: 50rem;
+        background-image: url(./images/desktop-image-hero-1.jpg);
         background-size: cover;
-        background-position: center center;
+        background-position: bottom center;
     }
+
     .menu-and-title{
-        padding-top: 1rem;
+        padding: 3rem 2rem 0 0;
+        justify-content: space-between;
+    }
+
+    .hamburger-open,
+    .hamburger-close{
+        display: none;
     }
 
     .hero-title{
         font-size: 4rem;
+        margin: 0;
+    }
+
+    .nav{
+        height: auto;
+        display: block;
     }
 
     .nav a{
