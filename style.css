@@ -38,7 +38,7 @@ colors{
     justify-content: left;
 }
 
-.hamburger-icons{
+.hamburger-open_container{
     flex-basis: 10%;
 }
 
@@ -47,15 +47,6 @@ colors{
     width: 2.5rem;
     height: 2rem;
     margin: 0 5rem 0 2rem;
-    z-index: 1;
-}
-
-.hamburger-open{
-    display: block;
-}
-
-.hamburger-close{
-    display: none;
 }
 
 .hero-title{
@@ -67,29 +58,44 @@ colors{
     margin-left: 5rem;
 }
 
-.nav{
-    width: 100%;
-    height: 0;
+.hamburger-close{
+    display: none;
+}
+
+.nav-container{
     display: none;
     background-color: transparent;
     margin-left: 1rem;
     transition: all .3s ease-out;
 }
 
+/* for JavaScript Toggle*/
 .shownav{
-    height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: hsl(0, 0%, 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
 }
+/* end */
 
 .menu-link{
     display: inline-block;
     text-decoration: none;
-    color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 0%);
+    font-weight: 600;
     padding: 1.2rem 0;
     cursor: pointer;
     margin: 0 1rem;
     position: relative;
 }
 
+/* for JavaScript Active menu*/
 .active::after{
     content: '';
     position: absolute;
@@ -97,8 +103,9 @@ colors{
     height: 0.3rem;
     left: 0;
     bottom: 0; 
-    background-color: #ffffff;
+    background-color: hsl(0, 0%, 0%);
 }
+/* end */
 
 .menu-link:hover::after{
     content: '';
@@ -107,7 +114,7 @@ colors{
     height: 0.3rem;
     left: 0;
     bottom: 0; 
-    background-color: #ffffff;
+    background-color: hsl(0, 0%, 0%);
 }
 
 .button-container{
@@ -188,6 +195,7 @@ colors{
     flex-basis: 10%;
     margin-top: 2rem;
 }
+/* end */
 
 @media screen and (min-width: 768px){
     .hero{
@@ -197,14 +205,27 @@ colors{
         background-position: bottom center;
     }
 
+    .hamburger-open,
+    .hamburger-close{
+        display: none;
+    }
+
     .menu-and-title{
         padding: 3rem 2rem 0 0;
         justify-content: space-between;
     }
 
-    .hamburger-open,
-    .hamburger-close{
-        display: none;
+    .menu-link{
+        color: hsl(0, 0%, 100%);
+        font-weight: 500;
+    }
+   
+    .active::after{
+        background-color: hsl(0, 0%, 100%);
+    }
+
+    .menu-link:hover::after{
+        background-color: hsl(0, 0%, 100%);
     }
 
     .hero-title{
@@ -212,8 +233,7 @@ colors{
         margin: 0;
     }
 
-    .nav{
-        height: auto;
+    .nav-container{
         display: block;
     }
 
@@ -283,12 +303,8 @@ colors{
         flex-basis: 10%;
     }
 
-    .nav{
+    .nav-container{
         margin-left: 10rem;
-    }
-
-    .hamburger-open{
-        display: none;
     }
 
     .shop-now-container{
@@ -297,7 +313,6 @@ colors{
 
     .shop-now-article{
         flex-basis: 40%;
-        /* padding: 20rem 10rem; */
         display: grid;
         place-items: center;
     }

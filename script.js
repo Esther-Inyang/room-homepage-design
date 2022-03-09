@@ -11,25 +11,24 @@ menuLinks.forEach((menuLink) =>{
 })
 
 //HAMBURGER FOR MOBILE
+const navContainer = document.querySelector(".nav-container")
 const hamburgerOpen = document.querySelector(".hamburger-open")
 const hamburgerClose = document.querySelector(".hamburger-close")
-
 const heroTitle = document.querySelector(".hero-title")
 
 hamburgerOpen.addEventListener("click", ()=>{
     hamburgerOpen.style.display = "none";
     hamburgerClose.style.display = "block";
     heroTitle.style.display = "none";
-    nav.classList.add("shownav")
-    nav.style.display = "block";
+    navContainer.classList.add("shownav");
+    menuLinks.style.color = "black";
 })
 
 hamburgerClose.addEventListener("click", ()=>{
     hamburgerClose.style.display = "none";
     hamburgerOpen.style.display = "block";
     heroTitle.style.display = "block";
-    nav.style.display = "none";
-    nav.classList.remove("shownav");
+    navContainer.classList.remove("shownav");
 })
 
 //BUTTONS
@@ -88,7 +87,7 @@ function pageSlider(){
 nextBtn.addEventListener("click", ()=>{
     counter++;
 
-    //if last slide
+    //after last slide do this
     if(counter > pageSliders.length-1){
         counter = 0;
     }
@@ -99,7 +98,7 @@ nextBtn.addEventListener("click", ()=>{
 prevBtn.addEventListener("click", ()=>{
     counter--;
 
-    //if last slide
+    //before first slide do this
     if(counter < 0){
         counter = pageSliders.length-1;
     }
